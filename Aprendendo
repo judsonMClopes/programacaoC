@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+
+int main (){
+
+    char nome[50];
+    int idade; 
+    double altura;
+    
+    printf("Digite seu nome: ");
+    fgets(nome, sizeof(nome), stdin);
+   
+    // Remove o caractere de nova linha adicionado pelo fgets
+    nome[strcspn(nome, "\n")] = '\0';
+    
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+    
+    printf("Digite sua altura: ");
+    scanf("%lf", &altura);
+
+    printf("\n--- DADOS INFORMADOS ---\n");
+    printf("Nome: %s\n", nome);
+    printf("Idade: %d\n", idade);
+    printf("Altura: %.2f\n", altura);
+
+    if (idade >= 18) {
+        printf("%s é maior de idade.\n", nome);
+    } else {
+        printf("%s é menor de idade.\n", nome);
+    }
+       
+       return 0;
+    }
